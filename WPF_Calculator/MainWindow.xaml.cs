@@ -29,6 +29,9 @@ namespace WPF_Calculator
         {
             ButtonPow.Content = "x\u00b2";
             ButtonSquare.Content = "\u221ax";
+            ButtonDivide.Content = "\u00f7";
+            ButtonMulty.Content = "\u00d7";
+            ButtonMinus.Content = "\u2212";
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////
@@ -97,7 +100,7 @@ namespace WPF_Calculator
 
         private void ButtonDivide_Click(object sender, RoutedEventArgs e)
         {
-            Label_Operation.Content = "/";
+            Label_Operation.Content = "\u00f7";
             Label_Calc.Content = Label_Res.Content;
             Label_Res.Content = "0";
         }
@@ -142,7 +145,7 @@ namespace WPF_Calculator
 
         private void ButtonMulty_Click(object sender, RoutedEventArgs e)
         {
-            Label_Operation.Content = "x";
+            Label_Operation.Content = "\u00d7";
             Label_Calc.Content = Label_Res.Content;
             Label_Res.Content = "0";
         }
@@ -187,7 +190,7 @@ namespace WPF_Calculator
 
         private void ButtonMinus_Click(object sender, RoutedEventArgs e)
         {
-            Label_Operation.Content = "-";
+            Label_Operation.Content = "\u2212";
             Label_Calc.Content = Label_Res.Content;
             Label_Res.Content = "0";
         }

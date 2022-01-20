@@ -5,15 +5,15 @@ winexe
 C#
 .cs
 D:\Learning\4Work\Git\wpf-calculator\WPF_Calculator\obj\Debug\net6.0-windows\
-WPF_Calculator_tmmbtj2c_wpftmp
+WPF_Calculator
 none
 false
-TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Learning\4Work\Git\wpf-calculator\WPF_Calculator\App.xaml
 11407045341
 
-62098451063
-388-2010039996
+4-203389245
+1941142463650
 MainWindow.xaml;
 
 True

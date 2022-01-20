@@ -286,21 +286,21 @@ namespace WPF_Calculator
             {
                 switch (Convert.ToString(Label_Operation.Content))
                 {
-                    case "x":
+                    case "\u00d7":
                         res = top_value * bottom_value;
-                        op = "x";
+                        op = "\u00d7";
                         break;
-                    case "/":
+                    case "\u00f7":
                         res = top_value / bottom_value;
-                        op = "/";
+                        op = "\u00f7";
                         break;
                     case "+":
                         res = top_value + bottom_value;
                         op = "+";
                         break;
-                    case "-":
+                    case "\u2212":
                         res = top_value - bottom_value;
-                        op = "-";
+                        op = "\u2212";
                         break;
                 }
                 Label_Calc.Content = top_value + op + bottom_value;

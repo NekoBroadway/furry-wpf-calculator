@@ -25,14 +25,18 @@
             <RowDefinition Height ="1*"/>
         </Grid.RowDefinitions>
         <Label x:Name="Label_Calc" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="36"></Label>
-        <Label x:Name="Label_Operation" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"></Label>
+        <Label x:Name="Label_Operation" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="16" Panel.ZIndex="1"/>
         <Label x:Name="Label_Res" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalContentAlignment="Right" FontSize="36" Content="0" VerticalContentAlignment="Center"></Label>
 
-        <Button x:Name="ButtonPercent" Content="%" Grid.Row="3" Grid.Column="0" Click="ButtonPercent_Click" FontSize="20" Margin="1,1,1,1" Background="#FFF3F3F3" BorderThickness="0,0,0,0">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
-            </Button.Effect>
-        </Button>
+        <Border Grid.Row="3" Grid.Column="0">
+            <Button x:Name="ButtonPercent" Content="%" Click="ButtonPercent_Click" FontSize="20" Margin="1,1,1,1" Background="#FFF3F3F3" BorderThickness="0,0,0,0">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+        </Border>
+        
+        
         <Button x:Name="ButtonDeleteALL" Content="CE" Grid.Row="3" Grid.Column="1" Click="ButtonDeleteALL_Click" FontSize="20" Margin="1,1,1,1" Background="#FFF3F3F3" BorderThickness="0,0,0,0">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
@@ -143,7 +147,7 @@
                 <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
             </Button.Effect>
         </Button>
-        <Button Content="=" Grid.Row="8" Grid.Column="3" Click="ButtonCalc_Click" FontSize="20" Margin="1,1,1,1" Background="#FFF3F3F3" BorderThickness="0,0,0,0">
+        <Button Content="=" Grid.Row="8" Grid.Column="3" Click="ButtonCalc_Click" FontSize="20" Margin="1,1,1,1" Background="#FF196EC0" BorderThickness="0,0,0,0" Foreground="White">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
             </Button.Effect>

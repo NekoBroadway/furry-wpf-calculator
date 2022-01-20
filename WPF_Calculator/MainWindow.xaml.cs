@@ -286,105 +286,26 @@ namespace WPF_Calculator
             {
                 switch (Convert.ToString(Label_Operation.Content))
                 {
-                    case "x":
+                    case "\u00d7":
                         res = top_value * bottom_value;
-                        op = "x";
+                        op = "\u00d7";
                         break;
-                    case "/":
+                    case "\u00f7":
                         res = top_value / bottom_value;
-                        op = "/";
+                        op = "\u00f7";
                         break;
                     case "+":
                         res = top_value + bottom_value;
                         op = "+";
                         break;
-                    case "-":
+                    case "\u2212":
                         res = top_value - bottom_value;
-                        op = "-";
+                        op = "\u2212";
                         break;
                 }
                 Label_Calc.Content = top_value + op + bottom_value;
                 Label_Res.Content = Convert.ToString(res);
                 Label_Operation.Content = "=";
-            }
-        }
-
-        ///////////////////////////////////////////////////////////////////////////////////////////
-
-        private void ButtonEvents(object sender, KeyEventArgs e)
-        {
-            RoutedEventArgs MouseClick = new RoutedEventArgs();
-            MouseClick.RoutedEvent = MouseLeftButtonDownEvent;
-
-            switch (e.Key)
-            {
-                case Key.Enter:
-                    ButtonCalc_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad0:
-                    ButtonAddZero_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad1:
-                    ButtonAddOne_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad2:
-                    ButtonAddTwo_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad3:
-                    ButtonAddThree_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad4:
-                    ButtonAddFour_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad5:
-                    ButtonAddFive_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad6:
-                    ButtonAddSix_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad7:
-                    ButtonAddSeven_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad8:
-                    ButtonAddEight_Click(sender, MouseClick);
-                    break;
-
-                case Key.NumPad9:
-                    ButtonAddNine_Click(sender, MouseClick);
-                    break;
-
-                case Key.Multiply:
-                    ButtonMulty_Click(sender, MouseClick);
-                    break;
-
-                case Key.Divide:
-                    ButtonDivide_Click(sender, MouseClick);
-                    break;
-
-                case Key.Add:
-                    ButtonPlus_Click(sender, MouseClick);
-                    break;
-
-                case Key.Subtract:
-                    ButtonMinus_Click(sender, MouseClick);
-                    break;
-
-                case Key.Delete:
-                    ButtonDeleteALL_Click(sender, MouseClick);
-                    break;
-
-                case Key.Back:
-                    ButtonDelete_Click(sender, MouseClick);
-                    break;
             }
         }
     }

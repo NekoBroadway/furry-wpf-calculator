@@ -1,0 +1,145 @@
+﻿<Window x:Class="WPF_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="529" Width="426" WindowStyle="ThreeDBorderWindow" Background="#FFF3F3F3" VerticalAlignment="Center" Activated="SetUnicodeSymbols" PreviewKeyDown="ButtonEvents" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="NoResize" Icon="/calculator.png">
+    <Grid HorizontalAlignment="Center" Height="500" VerticalAlignment="Center" Width="400" Grid.Row="7" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="5,5,5,5" MinWidth="400" MinHeight="500" MaxWidth="1920" MaxHeight="1080" ShowGridLines="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FFF3F3F3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="Label_Calc" Content="" HorizontalAlignment="Center" Height="60" Margin="0,16,0,0" VerticalAlignment="Top" Width="380" Background="#FFF3F3F3" FontSize="36" Panel.ZIndex="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" Grid.Column="1"/>
+        <Label x:Name="Label_Operation" Content="" HorizontalAlignment="Left" Height="30" Margin="360,65,0,0" VerticalAlignment="Top" Width="30" Background="{x:Null}" FontSize="16" Panel.ZIndex="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label x:Name="Label_Res" Content="0" HorizontalAlignment="Center" Height="60" Margin="0,76,0,0" VerticalAlignment="Top" Width="380" Background="#FFF3F3F3" FontSize="36" Panel.ZIndex="1" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Right" Grid.Column="1"/>
+        <Grid Panel.ZIndex="-1" Background="#FFF3F3F3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="78*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="ButtonReverse" Content="1/x" HorizontalAlignment="Left" Height="50" Margin="-1,14,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonReverse_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonPow" Content="x^2" HorizontalAlignment="Left" Height="50" Margin="97,14,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" ContentStringFormat="\u00b2" Click="ButtonPow_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonSquare" Content="x ^ 1/2" HorizontalAlignment="Left" Height="50" Margin="195,14,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonSquare_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonDivide" Content="/" HorizontalAlignment="Left" Height="50" Margin="293,14,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonDivide_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonSeven" Content="7" HorizontalAlignment="Left" Height="50" Margin="-1,72,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddSeven_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonEight" Content="8" HorizontalAlignment="Left" Height="50" Margin="97,72,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddEight_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonNine" Content="9" HorizontalAlignment="Left" Height="50" Margin="195,72,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddNine_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonMulty" Content="X" HorizontalAlignment="Left" Height="50" Margin="293,72,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonMulty_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonFour" Content="4" HorizontalAlignment="Left" Height="50" Margin="-1,0,0,0" VerticalAlignment="Center" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddFour_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonFive" Content="5" HorizontalAlignment="Left" Height="50" Margin="97,0,0,0" VerticalAlignment="Center" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddFive_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonSix" Content="6" HorizontalAlignment="Left" Height="50" Margin="195,0,0,0" VerticalAlignment="Center" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddSix_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonMinus" Content="-" HorizontalAlignment="Left" Height="50" Margin="293,0,0,0" VerticalAlignment="Center" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonMinus_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonOne" Content="1" HorizontalAlignment="Left" Height="50" Margin="-1,188,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddOne_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonTwo" Content="2" HorizontalAlignment="Left" Height="50" Margin="97,188,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddTwo_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonThree" Content="3" HorizontalAlignment="Left" Height="50" Margin="195,188,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddThree_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonPlus" Content="+" HorizontalAlignment="Left" Height="50" Margin="293,188,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonPlus_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonNegate" Content="+/-" HorizontalAlignment="Left" Height="50" Margin="-1,246,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonNegate_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonZero" Content="0" HorizontalAlignment="Left" Height="50" Margin="97,246,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddZero_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonDot" Content="," HorizontalAlignment="Left" Height="50" Margin="195,246,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="White" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonAddDot_Click" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonCalc" Content="=" HorizontalAlignment="Left" Height="50" Margin="293,246,0,0" VerticalAlignment="Top" Width="90" Background="#FF196EC0" Click="ButtonCalc_Click" Foreground="#FFB1CEEA" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FF196EC0" Grid.Row="1">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonPercent" Content="%" HorizontalAlignment="Left" Height="50" Margin="-1,144,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonPercent_Click" Grid.RowSpan="2">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonDeleteAll" Content="CE" HorizontalAlignment="Left" Height="50" Margin="97,144,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonDeleteALL_Click" Grid.RowSpan="2">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonReset" Content="C" HorizontalAlignment="Left" Height="50" Margin="195,144,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonReset_Click" Grid.RowSpan="2">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="ButtonDelete" Content="DEL" HorizontalAlignment="Left" Height="50" Margin="293,144,0,0" VerticalAlignment="Top" Width="90" Panel.ZIndex="1" Background="#FFF9F9F9" FontSize="20" FontFamily="Verdana Pro Semibold" FontWeight="Normal" BorderBrush="#FFE7E7E7" Foreground="#FF1B1B1B" Click="ButtonDelete_Click" Grid.RowSpan="2">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="270" ShadowDepth="3" RenderingBias="Performance" Color="#FFE3E3E3"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
